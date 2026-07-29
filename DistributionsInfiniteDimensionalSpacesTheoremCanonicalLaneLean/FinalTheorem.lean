@@ -1,0 +1,16 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.DistributionsInfiniteDimensionalSpacesTheoremCanonicalLaneLean.TestFunctionSpace
+import HautevilleHouse.DistributionsInfiniteDimensionalSpacesTheoremCanonicalLaneLean.DistributionSpace
+import HautevilleHouse.DistributionsInfiniteDimensionalSpacesTheoremCanonicalLaneLean.ConvergenceStructure
+
+namespace HautevilleHouse
+namespace DistributionsInfiniteDimensionalSpacesTheoremCanonicalLaneLean
+
+def ConstrainedDistributionClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_distribution_endgame (A : AdmissibleClass) : ConstrainedDistributionClosure A :=
+  And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end DistributionsInfiniteDimensionalSpacesTheoremCanonicalLaneLean
+end HautevilleHouse
